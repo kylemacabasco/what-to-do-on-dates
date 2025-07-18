@@ -8,8 +8,8 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "What To Do On Dates | Romantic Date Ideas & Activities",
-  description: "Discover amazing romantic date ideas and activities to create unforgettable moments with your special someone.",
+  title: "Togetha Foreva | Spontaneous Date Randomizer for Couples",
+  description: "Can't decide what to do? Stop being indecisive! Get instant random date ideas for couples who are bored and need help choosing activities.",
 };
 
 export default function RootLayout({
