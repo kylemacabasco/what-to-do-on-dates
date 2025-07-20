@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-rose-200">
+    <div className="min-h-screen bg-stone-200">
       {/* Hero Section */}
       <div className="flex flex-col items-center justify-center px-4 py-8 md:py-12">
         <div className="text-center max-w-4xl mx-auto">
@@ -17,7 +17,7 @@ export default function Home() {
           {/* Problem Statement */}
           
           {/* Main CTA */}
-          <div className="my-15">
+          <div className="my-10">
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 mb-15 max-w-2xl mx-auto">
               <p className="text-lg text-rose-800 italic">
                 No more "I don't know, what do you want to do?" 🤷‍♀️
@@ -30,7 +30,7 @@ export default function Home() {
         </div>
 
         {/* How It Works */}
-        <div className="max-w-6xl my-10 mx-auto w-full">
+        <div className="max-w-6xl mt-7 mx-auto w-full">
           <h2 className="text-3xl font-bold text-rose-800 text-center mb-8">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 text-center shadow-xl">
