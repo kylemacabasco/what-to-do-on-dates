@@ -2,13 +2,10 @@
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative overflow-hidden" style={{ background: 'var(--bg)' }}>
-      {/* Subtle grain overlay */}
-      <div className="grain-overlay absolute inset-0 pointer-events-none" />
-      
+    <div className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Hero Section */}
-      <div className="relative z-10 flex flex-col items-center justify-center px-6 py-16 md:py-24 lg:py-32">
-        <div className="text-center max-w-3xl mx-auto space-y-8">
+      <div className="flex flex-col items-center justify-center px-6 py-12 md:py-16">
+        <div className="text-center max-w-3xl mx-auto space-y-6">
           {/* Main Headline */}
           <h1 
             className="text-5xl md:text-7xl font-semibold tracking-tight leading-[1.1]"
@@ -25,7 +22,7 @@ export default function Home() {
           </p>
           
           {/* Main CTA */}
-          <div className="pt-8 pb-12">
+          <div className="pt-6 pb-6">
             <button 
               className="group relative px-10 py-4 text-base font-semibold overflow-hidden transition-all"
               style={{ 
@@ -67,9 +64,9 @@ export default function Home() {
         </div>
 
         {/* How It Works */}
-        <div className="max-w-5xl mt-24 mx-auto w-full">
+        <div className="max-w-5xl mt-16 mx-auto w-full">
           <h2 
-            className="text-2xl md:text-3xl font-semibold text-center mb-12 tracking-tight"
+            className="text-2xl md:text-3xl font-semibold text-center mb-8 tracking-tight"
             style={{ color: 'var(--text)' }}
           >
             How it works
@@ -95,7 +92,7 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="card-shadow group p-8 rounded-2xl transition-all"
+                className="card-shadow group p-6 rounded-2xl transition-all"
                 style={{ 
                   background: 'var(--surface)',
                   borderRadius: 'var(--radius-lg)',
