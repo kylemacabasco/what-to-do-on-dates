@@ -28,7 +28,7 @@ export default function Home() {
           {/* Main CTA */}
           <div className="pt-6 pb-6">
             <SignedOut>
-              <SignUpButton mode="modal">
+              <SignUpButton mode="modal" forceRedirectUrl="/dates">
                 <button 
                   className="group relative px-10 py-4 text-base font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out overflow-hidden cursor-pointer"
                   style={{ 

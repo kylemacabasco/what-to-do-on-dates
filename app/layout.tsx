@@ -19,7 +19,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      signInFallbackRedirectUrl="/dates"
+      signUpFallbackRedirectUrl="/dates"
+    >
       <html lang="en">
         <body className="font-sans antialiased">
           <header 
@@ -28,7 +31,7 @@ export default function RootLayout({
           >
             <div className="flex items-center gap-3">
               <SignedOut>
-                <SignInButton mode="modal">
+                <SignInButton mode="modal" forceRedirectUrl="/dates">
                   <button 
                     className="text-sm font-medium px-5 py-2 rounded-full transition-all"
                     style={{ 
