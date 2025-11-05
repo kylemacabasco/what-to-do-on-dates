@@ -1,6 +1,10 @@
 'use client';
 
+import { SignUpButton, SignedIn, SignedOut } from '@clerk/nextjs';
+import { useRouter } from 'next/navigation';
+
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Hero Section */}
@@ -23,32 +27,65 @@ export default function Home() {
           
           {/* Main CTA */}
           <div className="pt-6 pb-6">
-            <button 
-              className="group relative px-10 py-4 text-base font-semibold overflow-hidden transition-all"
-              style={{ 
-                background: 'var(--primary)',
-                color: 'var(--text)',
-                borderRadius: 'var(--radius-pill)',
-                transition: 'transform var(--transition-default), box-shadow var(--transition-default)'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(1.02)';
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(31, 58, 55, 0.4)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
-              <span className="relative z-10 text-white">Find a date idea</span>
-              <div 
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
+            <SignedOut>
+              <SignUpButton mode="modal" forceRedirectUrl="/dates">
+                <button 
+                  className="group relative px-10 py-4 text-base font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out overflow-hidden cursor-pointer"
+                  style={{ 
+                    background: 'var(--primary)',
+                    color: 'var(--text)',
+                    borderRadius: 'var(--radius-pill)',
+                    transition: 'transform var(--transition-default), box-shadow var(--transition-default)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.02)';
+                    e.currentTarget.style.boxShadow = '0 8px 32px rgba(31, 58, 55, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <span className="relative z-10 text-white">Find a date idea</span>
+                  <div 
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{ 
+                      background: 'linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)',
+                      transition: 'opacity var(--transition-slow)'
+                    }}
+                  />
+                </button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <button 
+                className="group relative px-10 py-4 text-base font-semibold overflow-hidden transition-all cursor-pointer"
                 style={{ 
-                  background: 'linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)',
-                  transition: 'opacity var(--transition-slow)'
+                  background: 'var(--primary)',
+                  color: 'var(--text)',
+                  borderRadius: 'var(--radius-pill)',
+                  transition: 'transform var(--transition-default), box-shadow var(--transition-default)'
                 }}
-              />
-            </button>
+                onClick={() => router.push('/dates')}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.02)';
+                  e.currentTarget.style.boxShadow = '0 8px 32px rgba(31, 58, 55, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <span className="relative z-10 text-white">Find a date idea</span>
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                  style={{ 
+                    background: 'linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)',
+                    transition: 'opacity var(--transition-slow)'
+                  }}
+                />
+              </button>
+            </SignedIn>
           </div>
 
           {/* Soft reassurance */}
