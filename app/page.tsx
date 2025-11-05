@@ -1,10 +1,19 @@
 'use client';
 
-import { SignUpButton, SignedIn, SignedOut } from '@clerk/nextjs';
+import { SignUpButton, SignedIn, SignedOut, useAuth } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Home() {
   const router = useRouter();
+  const { isSignedIn, isLoaded } = useAuth();
+  
+  // Redirect to /dates if user is signed in
+  useEffect(() => {
+    if (isLoaded && isSignedIn) {
+      router.push('/dates');
+    }
+  }, [isLoaded, isSignedIn, router]);
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Hero Section */}
